@@ -28,20 +28,35 @@
     --item-hover-text-color: inherit;
     --monospace: monospace;
     /*monospace font for codes, fences*/
-    --strong-weight: 900;
-    --strong-font: Charter, Times, "Songti SC", "思源宋体 CN", "黑体", "宋体" 
+    --body-font: "Charter", "Times New Roman", "Songti SC", "SimSong", "思源宋体 CN", "黑体", "宋体", serif;
+    --heading-font: "Charter", "Times New Roman", "黑体", "宋体", serif;
+    --quote-font: "Charter", "Times New Roman", "Kaiti SC", "KaiTi", "Songti SC", "SimSong", "思源宋体 CN", serif;
+    --code-font: monospace, "Consolas", "SimSong", "思源宋体 CN";
+    --strong-weight: 800;
+    --strong-font: "Charter", Times, "Songti SC", "思源宋体 CN", "黑体", "宋体", serif;
+}
+
+@supports (font: -apple-system-body) {
+    :root {
+        --body-font: "Charter", "Times New Roman", "SimSong", "Songti SC", "思源宋体 CN", "黑体", "宋体", serif;
+        --quote-font: "Charter", "Times New Roman", "Kaiti SC", "SimSong", "Songti SC", "思源宋体 CN", serif;
+    }
+
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        :root {
+            --strong-weight: 900;
+        }
+    }
 }
 
 
 /***************** 这里定义一些全局信息****************/
 
 html,
-body,
-#write {
+body {
     background: white;
-    font-family: 'Charter','Times New Roman', "Songti SC", "SimSong", 思源宋体 CN, 黑体;
+    font-family: var(--body-font);
     font-weight: normal;
-    max-width: 55rem;
 }
 
 body {
@@ -59,7 +74,11 @@ strong {
 
 #write {
     margin: auto;
-    text-align: justify;
+    max-width: 55rem;
+    background: white;
+    font-family: var(--body-font);
+    font-weight: normal;
+    text-align: left;
 }
 
 
@@ -102,12 +121,12 @@ a {
 } */
 
 .md-toc-content {
-    font-family: 'Charter', 'Times New Roman', 思源宋体 CN;
+    font-family: var(--body-font);
     counter-reset: h1toc;
 }
 
 .md-toc-h1 {
-    font-family: 'Charter', 'Times New Roman', 黑体;
+    font-family: var(--heading-font);
     margin-left: 0;
     font-size: 1rem;
     counter-reset: h2toc;
@@ -292,7 +311,7 @@ a {
 /***************** 这里定义YAML头部的样式 ****************/
 
 #write pre.md-meta-block {
-    font-family: 'Charter', 'Times New Roman', 思源宋体 CN;
+    font-family: var(--body-font);
     padding: 1rem;
     font-size: 85%;
     line-height: 1.45;
@@ -307,7 +326,7 @@ a {
 /***************** 这里定义代码的样式 ****************/
 
 code {
-    font-family: monospace, 'Consolas', 思源宋体 CN;
+    font-family: var(--code-font);
     padding: .1rem;
     background: #f0f0f0;
     font-size: 0.9rem;
@@ -316,11 +335,10 @@ code {
 }
 
 .md-fences {
-    font-family: monospace, 'Consolas';
+    font-family: var(--code-font);
     border: 1px solid #e7eaed;
     background-color: #f8f8f8;
     border-radius: 3px;
-    padding: 0;
     padding: 2px 4px 0px 4px;
     font-size: 0.8rem;
     margin-bottom: 15px;
@@ -333,7 +351,7 @@ code {
 /***************** 这里定义大纲的样式 ****************/
 
 .outline-item {
-    font-family: 'Charter', 'Times New Roman', 思源宋体 CN, 黑体;
+    font-family: var(--body-font);
     font-size: 0.8rem;
     line-height: 1.35;
 }
@@ -416,7 +434,7 @@ code {
 #write h5,
 #write h6 {
     font-weight: normal;
-    font-family: 'Charter', 'Times New Roman', 黑体;
+    font-family: var(--heading-font);
 }
 
 #write h1 {
@@ -467,7 +485,7 @@ li {
     font-size: 1rem;
     line-height: 1.75;
     margin: 0.25rem;
-    font-family: 'Charter', 'Times New Roman', 思源宋体 CN;
+    font-family: var(--body-font);
 }
 
 /*working for PDF nothing, for Typora only for text*/
@@ -475,7 +493,7 @@ li p {
     font-size: 1rem;
     line-height: 1.75;
     margin: 0.25rem;
-    font-family: 'Charter', 'Times New Roman', 思源宋体 CN;
+    font-family: var(--body-font);
 }
 
 ul,
@@ -487,7 +505,7 @@ ol {
 /***************** 这里定义段落的样式 ****************/
 
 p {
-    font-family: 'Charter', 'Times New Roman', 思源宋体 CN;
+    font-family: var(--body-font);
     font-size: 1rem;
     line-height: 1.75;
     margin: 0.5rem 0 0.5rem 0;
@@ -514,7 +532,7 @@ blockquote {
 }
 
 blockquote p {
-    font-family: 'Charter', 'Times New Roman', 'Kaiti SC', 思源宋体 CN;
+    font-family: var(--quote-font);
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
     line-height: 1.75;
@@ -526,10 +544,12 @@ blockquote p {
 
 table {
     position: relative;
-    font-family: 'Charter', 'Times New Roman', 思源宋体 CN;
+    font-family: var(--body-font);
     width: 70%;
-    left: 15%;
-    *border-collapse: collapse;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
     border-spacing: 0;
     border-top: solid black 2px;
     border-bottom: solid black 2px;
@@ -557,6 +577,10 @@ p.mathjax-block,
     bottom: 5px;
     box-shadow: none;
 } 
+
+.typora-export #write {
+    text-align: justify;
+}
 
 
 /***************** 这里定义节编号的样式 ****************/
@@ -653,6 +677,10 @@ p.mathjax-block,
 
     html {
         font-size: 14px;
+    }
+
+    #write {
+        text-align: justify;
     }
 
     pre {
