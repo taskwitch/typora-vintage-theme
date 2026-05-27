@@ -542,20 +542,26 @@ blockquote p {
 
 /***************** 这里定义表格的样式 ****************/
 
-table {
-    position: relative;
+#write table {
+    display: table;
     font-family: var(--body-font);
     width: 70%;
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0.75rem auto;
     border-collapse: collapse;
     border-spacing: 0;
     border-top: solid black 2px;
     border-bottom: solid black 2px;
 }
 
-table thead th {
+#write .md-table,
+#write .md-table-fig,
+#write .table-figure {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#write table thead th {
     border-bottom: 3px double black;
 }
 
