@@ -50,7 +50,7 @@
 }
 
 
-/***************** 这里定义一些全局信息****************/
+/***************** Define some global information here ****************/
 
 html,
 body {
@@ -82,7 +82,7 @@ strong {
 }
 
 
-/***************** 这里定义水平线的样式 ****************/
+/***************** Define the horizontal rule style here ****************/
 
 hr {
     border: none;
@@ -91,7 +91,7 @@ hr {
 }
 
 
-/***************** 这里定义脚注的样式 ****************/
+/***************** Define the footnote style here ****************/
 
 sup[md-inline="footnote"] {
     background-color: white;
@@ -108,13 +108,13 @@ sup[md-inline="footnote"]:after {
 }
 
 
-/***************** 这里定义链接的样式 ****************/
+/***************** Define the link style here ****************/
 
 a {
     color: #285e8e;
 }
 
-/***************** 这里定义ToC的样式 ****************/
+/***************** Define the ToC style here ****************/
 
 /* .md-toc-inner {
     text-decoration: none;
@@ -228,7 +228,7 @@ a {
 }
 
 
-/***************** 这里定义任务列表的样式 ****************/
+/***************** Define the task list style here ****************/
 
 /* .task-list {
     padding-left: 0;
@@ -308,7 +308,7 @@ a {
 */
 
 
-/***************** 这里定义YAML头部的样式 ****************/
+/***************** Define the YAML header style here ****************/
 
 #write pre.md-meta-block {
     font-family: var(--body-font);
@@ -323,7 +323,7 @@ a {
 }
 
 
-/***************** 这里定义代码的样式 ****************/
+/***************** Define the code style here ****************/
 
 code {
     font-family: var(--code-font);
@@ -348,7 +348,7 @@ code {
 }
 
 
-/***************** 这里定义大纲的样式 ****************/
+/***************** Define the outline style here ****************/
 
 .outline-item {
     font-family: var(--body-font);
@@ -425,7 +425,7 @@ code {
 }
 
 
-/***************** 这里定义标题的样式 ****************/
+/***************** Define the heading style here ****************/
 
 #write h1,
 #write h2,
@@ -468,7 +468,7 @@ code {
     margin-bottom: 0.5rem;
 }
 
-/***************** 这里定义列表的样式 ****************/
+/***************** Define the list style here ****************/
 
 ol li {
     /*list-style-type: decimal;*/
@@ -502,7 +502,7 @@ ol {
 }
 
 
-/***************** 这里定义段落的样式 ****************/
+/***************** Define the paragraph style here ****************/
 
 p {
     font-family: var(--body-font);
@@ -512,7 +512,7 @@ p {
 }
 
 
-/***************** 这里定义图片的样式 ****************/
+/***************** Define the image style here ****************/
 
 img {
     margin: auto;
@@ -520,7 +520,7 @@ img {
 }
 
 
-/***************** 这里定义引用的样式 ****************/
+/***************** Define the blockquote style here ****************/
 
 blockquote {
     border-left: 5px solid #666;
@@ -540,7 +540,7 @@ blockquote p {
 }
 
 
-/***************** 这里定义表格的样式 ****************/
+/***************** Define the table style here ****************/
 
 #write table {
     display: table;
@@ -566,7 +566,7 @@ blockquote p {
 }
 
 
-/***************** 这里定义公式的样式 ****************/
+/***************** Define the math formula style here ****************/
 
  .MathJax_Display {
     font-size: 0.95rem;
@@ -589,7 +589,7 @@ p.mathjax-block,
 }
 
 
-/***************** 这里定义节编号的样式 ****************/
+/***************** Define the section numbering style here ****************/
 
 #write {
     counter-reset: h1;
@@ -677,7 +677,7 @@ p.mathjax-block,
 }
 
 
-/***************** 这里定义打印或者导出PDF的样式 ****************/
+/***************** Define the print or PDF export style here ****************/
 
 @media print {
 
