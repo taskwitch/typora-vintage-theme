@@ -1,0 +1,215 @@
+/* Dark variant of the Vintage theme. Builds on vintage.css and re-tints it for dark backgrounds. */
+@import url("./vintage.css");
+
+:root {
+    --bg-color: #1c1c1c;
+    --text-color: #dcdcdc;
+    --md-char-color: #5c5c5c;
+    --meta-content-color: #8fadbb;
+
+    --primary-color: #5b9bd5;
+    --primary-btn-border-color: #3f6f96;
+    --primary-btn-text-color: #fff;
+
+    --window-border: 1px solid #333;
+
+    --active-file-bg-color: #2a2a2a;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #777;
+
+    --side-bar-bg-color: var(--bg-color);
+    --item-hover-bg-color: rgba(255, 255, 255, 0.08);
+    --item-hover-text-color: inherit;
+
+    /* background of the source-editing overlay for math/html/toc raw blocks */
+    --rawblock-edit-panel-bd: #242424;
+}
+
+
+/***************** 全局背景与文字颜色 ****************/
+
+html,
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+#write {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+strong {
+    color: var(--text-color);
+}
+
+
+/***************** 水平线 ****************/
+
+hr {
+    border-top: 1px dashed #666;
+    color: #666;
+}
+
+
+/***************** 脚注 ****************/
+
+sup[md-inline="footnote"] {
+    background-color: var(--bg-color);
+}
+
+
+/***************** 链接 ****************/
+
+a {
+    color: #6ca9c7;
+}
+
+
+/***************** YAML 头部 ****************/
+
+#write pre.md-meta-block {
+    background-color: #242424;
+    color: #9a9a9a;
+}
+
+
+/***************** 代码 ****************/
+
+code {
+    background: #2a2a2a;
+    color: #dcdcdc;
+}
+
+.md-fences {
+    border: 1px solid #3a3a3a;
+    background-color: #232323;
+    color: #dcdcdc;
+}
+
+.CodeMirror-gutter-filler,
+.CodeMirror-scrollbar-filler {
+    background-color: var(--bg-color);
+}
+
+/* CodeMirror's built-in "cm-s-inner" token colors are tuned for a white
+   background (e.g. cm-variable is pure black); re-tint them for readability
+   on a dark fence background. Also covers the math/html raw-block editor,
+   which reuses the same CodeMirror instance. */
+.cm-s-inner .cm-keyword {
+    color: #c678dd;
+}
+
+.cm-s-inner .cm-atom,
+.cm-s-inner.cm-atom,
+.cm-s-inner .cm-number {
+    color: #d19a66;
+}
+
+.cm-s-inner .cm-def,
+.cm-s-inner .cm-variable-2,
+.cm-s-inner .cm-header,
+.cm-s-inner.cm-header,
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #61afef;
+}
+
+.cm-s-inner .cm-variable,
+.cm-s-inner .cm-property {
+    color: #dcdcdc;
+}
+
+.cm-s-inner .cm-variable-3 {
+    color: #56b6c2;
+}
+
+.cm-s-inner .cm-string,
+.cm-s-inner .cm-quote,
+.cm-s-inner.cm-quote {
+    color: #98c379;
+}
+
+.cm-s-inner .cm-operator {
+    color: #e06c75;
+}
+
+.cm-s-inner .cm-string-2,
+.cm-s-inner .cm-attribute {
+    color: #d19a66;
+}
+
+.cm-s-inner .cm-comment,
+.cm-s-inner.cm-comment {
+    color: #7f8c98;
+}
+
+.cm-s-inner .cm-meta,
+.cm-s-inner .cm-qualifier,
+.cm-s-inner .cm-bracket,
+.cm-s-inner .cm-hr,
+.cm-s-inner.cm-hr {
+    color: #abb2bf;
+}
+
+.cm-s-inner .cm-builtin {
+    color: #e5c07b;
+}
+
+.cm-s-inner .cm-tag {
+    color: #e06c75;
+}
+
+
+/***************** 标题 ****************/
+
+#write h1 {
+    color: #f2f2f2;
+}
+
+#write h2 {
+    color: #9fc8e6;
+}
+
+#write h3 {
+    color: #d29a7f;
+}
+
+#write h4,
+#write h5,
+#write h6 {
+    color: #dcdcdc;
+}
+
+
+/***************** 任务列表 ****************/
+
+.md-task-list-item>input:before {
+    border: 1px solid #888;
+    background: #1c1c1c;
+}
+
+.md-task-list-item>input:checked:before,
+.md-task-list-item>input[checked]:before {
+    background: #dcdcdc;
+}
+
+
+/***************** 引用 ****************/
+
+blockquote {
+    border-left: 5px solid #777;
+    background-color: #262626;
+}
+
+
+/***************** 表格 ****************/
+
+#write table {
+    border-top: solid #ccc 2px;
+    border-bottom: solid #ccc 2px;
+}
+
+#write table thead th {
+    border-bottom: 3px double #ccc;
+}
