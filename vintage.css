@@ -32,7 +32,7 @@
     --heading-font: "Charter", "Times New Roman", "黑体", "宋体", serif;
     --quote-font: "Charter", "Times New Roman", "Kaiti SC", "KaiTi", "Songti SC", "SimSong", "思源宋体 CN", serif;
     --code-font: monospace, "Consolas", "SimSong", "思源宋体 CN";
-    --strong-weight: 800;
+    --strong-weight: 700;
     --strong-font: "Charter", Times, "Songti SC", "思源宋体 CN", "黑体", "宋体", serif;
 }
 
@@ -40,12 +40,6 @@
     :root {
         --body-font: "Charter", "Times New Roman", "SimSong", "Songti SC", "思源宋体 CN", "黑体", "宋体", serif;
         --quote-font: "Charter", "Times New Roman", "Kaiti SC", "SimSong", "Songti SC", "思源宋体 CN", serif;
-    }
-
-    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        :root {
-            --strong-weight: 900;
-        }
     }
 }
 
